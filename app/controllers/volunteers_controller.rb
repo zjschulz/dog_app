@@ -1,0 +1,26 @@
+class VolunteersController < ApplicationController
+
+    def index
+        @volunteers = Volunteer.all
+    end
+
+    def new
+        @volunteer = Volunteer.new
+    end
+
+    def create
+        @volunteer = Volunteer.new(volunteer_params)
+        if @volunteer.save
+            redirect_to new_volunteer_walk_path(@volunteer)
+        else
+            render :new
+        end
+    end
+
+    private
+
+    def volunteer_params
+        params.require(:volunteer).permit(:name)
+    end
+
+end

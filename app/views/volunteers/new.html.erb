@@ -1,0 +1,9 @@
+<h2>New Volunteer</h2>
+
+<%= render partial: '/errors', locals: { record: @volunteer} %>
+
+<%= form_for @volunteer do |t|%>
+    <%= t.label :name %>
+    <%= t.texdt_field :name %>
+    <%= t.submit "Create Volunteer" %>
+<% end %>
