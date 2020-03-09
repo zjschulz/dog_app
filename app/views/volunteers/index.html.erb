@@ -1,1 +1,8 @@
-<h2>Volunteer List<h2/>
+<h2>Volunteer List</h2>
+
+<%= link_to "Create New Volunteer", volunteer_path %>
+
+<% @volunteers.each do |volunteer| %>
+    <h3><%= link_to volunteer.name, volunteer_walks_path(volunteer) %></h3>
+    #<p> Display total time of volunteer's walks based on walk durations </p>
+<% end %>
