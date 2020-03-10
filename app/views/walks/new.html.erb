@@ -1,0 +1,10 @@
+<h2>Add New Walk for Volunteer <%= @volunteer.name %></h2>
+
+<%= form_for @walk do |t| %>
+    <%= t.label :Duration %>
+    <%= t.number_field :duration %>
+    <%= t.label :Date %>
+    <%= t.date_field :date %>
+    <% t.hidden_field :volunteer_id, value: @volunteer.id %>
+    <%= t.submit "Create Walk" %>
+<% end %>

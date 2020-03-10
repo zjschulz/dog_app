@@ -6,6 +6,7 @@ class WalksController < ApplicationController
 
     def new
         pull_volunteer
+        @walk = Walk.new
     end
 
     def create
