@@ -1,0 +1,9 @@
+<h2><%= @volunteer.name %>'s Walks</h2>
+
+<%= link_to "Add New Walk", new_volunteer_walk_path(@volunteer) %>
+
+<% @volunteer.walks.each do |walk| %>
+    <h3><%= walk.dog.name %></h3>
+    <p><%= walk.duration %> minutes</p>
+    <p><%= walk.date %></p>
+<% end %>
