@@ -1,7 +1,7 @@
 class VolunteersController < ApplicationController
 
     def index
-        @volunteers = Volunteer.all
+        @volunteers = current_user.volunteers
     end
 
     def new
@@ -9,7 +9,8 @@ class VolunteersController < ApplicationController
     end
 
     def create
-        @volunteer = Volunteer.new(volunteer_params)
+        #@volunteer = Volunteer.new(volunteer_params)
+        current_user.volunteers.build(volunteer_params)
         if @volunteer.save
             redirect_to new_volunteer_walk_path(@volunteer)
         else

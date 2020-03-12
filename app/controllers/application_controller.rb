@@ -1,2 +1,17 @@
 class ApplicationController < ActionController::Base
+
+    def current_user
+        User.find_by(id: session[:user_id])
+    end
+
+    def redirect_if_logged_in
+        if !logged_in?
+          redirect_to dogs_path
+        end 
+      end
+
+    def logged_in?
+        !!current_user
+    end
+
 end
