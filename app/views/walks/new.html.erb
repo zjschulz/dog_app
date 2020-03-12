@@ -1,11 +1,14 @@
 <h2>Add New Walk for Volunteer <%= @volunteer.name %></h2>
 
+<p><%= render partial: '/errors', locals: { record: @walk } %></p>
+
 <%= form_for @walk do |t| %>
-    <%= collection_select :dog_id, Dog.all, :id, :name, prompt: true %>
+    <%= t.label :dog %>
+    <div><%= collection_select :dog_id, Dog.all, :id, :name, prompt: true %></div>
     <%= t.label :Duration %>
-    <%= t.number_field :duration %>
+    <div><%= t.number_field :duration %></div>
     <%= t.label :Date %>
-    <%= t.date_field :date %>
+    <div><%= t.date_field :date %></div>
     <%= t.hidden_field :volunteer_id, value: @volunteer.id %>
     <%= t.submit "Create Walk" %>
 <% end %>
