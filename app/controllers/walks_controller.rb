@@ -1,4 +1,6 @@
 class WalksController < ApplicationController
+    before_action :redirect_if_not_logged_in
+    before_action :validate_volunteer
 
     def index
         pull_volunteer
@@ -6,7 +8,6 @@ class WalksController < ApplicationController
 
     def new
         pull_volunteer
-        redirect_to volunteers_path if !@volunteer
         @walk = Walk.new
     end
 
@@ -28,6 +29,10 @@ class WalksController < ApplicationController
 
     def walk_params
         params.require(:walk).permit(:dog_id, :duration, :date, :volunteer_id)
+    end
+
+    def validate_volunteer
+        redirect_to volunteers_path unless pull_volunteer
     end
 
 end

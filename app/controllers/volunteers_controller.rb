@@ -1,6 +1,7 @@
 class VolunteersController < ApplicationController
-
-    def index
+    before_action :redirect_if_not_logged_in
+    
+    ef index
         @volunteers = current_user.volunteers
     end
 
@@ -9,8 +10,7 @@ class VolunteersController < ApplicationController
     end
 
     def create
-        #@volunteer = Volunteer.new(volunteer_params)
-        current_user.volunteers.build(volunteer_params)
+        @volunteer = current_user.volunteers.build(volunteer_params)
         if @volunteer.save
             redirect_to new_volunteer_walk_path(@volunteer)
         else

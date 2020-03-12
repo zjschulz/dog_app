@@ -1,6 +1,6 @@
 <h2>Volunteer List</h2>
 
-<%= link_to "Create New Volunteer", new_volunteers_path %>
+<%= link_to "Create New Volunteer", new_volunteer_path %>
 
 <% @volunteers.each do |volunteer| %>
     <h3><%= link_to volunteer.name, volunteer_walks_path(volunteer) %></h3>
