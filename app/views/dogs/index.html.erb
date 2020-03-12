@@ -1,5 +1,10 @@
 <h2>Dogs</h2>
 
+<%= link_to "All Dogs", dogs_path %>
+<p><%= link_to "Longest in SPCA", dogs_longestinspca_path %></p>
+<p><%= link_to "Rottweilers", dogs_rottweiler_path %></p>
+<p><%= link_to "Female", dogs_female_path %></p>
+
 <% @dogs.each do |dog| %>
 <p><%= dog.name %></p>
 <p><%= dog.breed %></p>

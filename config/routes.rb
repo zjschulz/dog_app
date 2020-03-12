@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     resources :walks, only: [:index, :new]
   end
   resources :walks, only: :create
+  get '/dogs/longestinspca', to: 'dogs#longestinspca'
+  get '/dogs/rottweiler', to: 'dogs#rottweiler'
+  get '/dogs/female', to: 'dogs#female'
 end
