@@ -1,0 +1,17 @@
+<h2>New Doggo</h2>
+
+<p><%= render partial: '/errors', locals: { record: @dog } %></p>
+
+<%= form_for @dog do |t| %>
+    <%= t.label :name %>
+    <div><%= t.text_field :name %></div>
+    <%= t.label :breed %>
+    <div><%= t.text_field :breed %></div>
+    <%= t.label :gender %>
+    <div><%= t.text_field :gender %></div>
+    <%= t.label :age %>
+    <div><%= t.text_field :age %></div>
+    <%= t.label :time_in %>
+    <div><%= t.text_field :time_in %></div>
+    <%= t.submit "Create Dog" %>
+<% end %>

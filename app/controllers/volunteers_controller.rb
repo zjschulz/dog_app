@@ -4,7 +4,7 @@ class VolunteersController < ApplicationController
     def index
         @volunteers = current_user.volunteers
     end
-
+ 
     def new
         @volunteer = Volunteer.new
     end
