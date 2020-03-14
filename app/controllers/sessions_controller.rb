@@ -4,16 +4,25 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(username: params[:username])
-        if !@user
-            @error = "Username invalid. Please try again."
-            render :new
-        elsif !@user.authenticate(params[:password])
-            @error = "Password invalid. Please try again."
-            render :new
-        else 
-            log_in(@user)
-            redirect_to volunteers_path
+        if request.env["omniauth.auth"]
+            @user = User.find_by(github_uid: request.env["omniauth.auth"]["uid"])
+            if @user.nil?
+                @user = User.create_by(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")
+            end
+                log_in(@user)
+                redirect_to volunteers_path
+        else
+            @user = User.find_by(username: params[:username])
+            if !@user
+                @error = "Username invalid. Please try again."
+                render :new
+            elsif !@user.authenticate(params[:password])
+                @error = "Password invalid. Please try again."
+                render :new
+            else 
+                log_in(@user)
+                redirect_to volunteers_path
+            end
         end
     end
 

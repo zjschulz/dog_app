@@ -5,9 +5,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
-        if !logged_in?
-          redirect_to dogs_path
-        end 
+          redirect_to dogs_path unless logged_in?
       end
 
     def logged_in?
