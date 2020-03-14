@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         if request.env["omniauth.auth"]
             @user = User.find_by(github_uid: request.env["omniauth.auth"]["uid"])
             if @user.nil?
-                @user = User.create_by(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")
+                @user = User.create(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")
             end
                 log_in(@user)
                 redirect_to volunteers_path

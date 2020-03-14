@@ -1,7 +1,7 @@
 class VolunteersController < ApplicationController
     before_action :redirect_if_not_logged_in
     
-    ef index
+    def index
         @volunteers = current_user.volunteers
     end
 
