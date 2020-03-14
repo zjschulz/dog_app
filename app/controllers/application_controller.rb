@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
-    def log_in(user)
-        session[:user_id] = user.id
+    def log_in(bork)
+        session[:user_id] = bork.id
     end
 
 end
