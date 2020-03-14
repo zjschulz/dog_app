@@ -1,14 +1,13 @@
 <h2>Dogs</h2>
 
 <%= link_to "All Dogs", dogs_path %>
-<%= link_to "Longest in SPCA", dogs_longestinspca_path %>
+<%= link_to "Order by Time In SPCA", dogs_longestinspca_path %>
 <%= link_to "Rottweilers", dogs_rottweiler_path %>
 <%= link_to "Female", dogs_female_path %>
 
 <% @dogs.each do |dog| %>
-<p><%= dog.name %></p>
-<p><%= dog.breed %></p>
-<p><%= dog.gender %></p>
-<p><%= dog.age %></p>
-<p><%= dog.time_in %></p>
+<p><h3><u><%= dog.name %></u></h3></p>
+<p><b>Breed/Gender: </b><%= dog.breed %>, <%= dog.gender %></p>
+<p><b>Age: </b><%= dog.age %> years</p>
+<p><b>Time In SPCA: </b><%= dog.time_in %> months</p>
 <% end %>
