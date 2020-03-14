@@ -4,7 +4,7 @@
 
 <%= form_for @walk do |t| %>
     <%= t.label :dog %>
-    <div><%= collection_select :dog, :dog_id, Dog.all, :id, :name, prompt: true %></div>
+    <div><%= t.collection_select :dog_id, Dog.all, :id, :name, prompt: true %></div>
     <%= t.label :Duration %> (in minutes)
     <div><%= t.number_field :duration %></div>
     <%= t.label :Date %>
