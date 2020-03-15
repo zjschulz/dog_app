@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   resources :walks, only: :create
 
+  get '/home', to: 'static#home'
+
   get '/dogs/longestinspca', to: 'dogs#longestinspca'
   get '/dogs/rottweiler', to: 'dogs#rottweiler'
   get '/dogs/female', to: 'dogs#female'

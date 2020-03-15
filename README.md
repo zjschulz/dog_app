@@ -14,7 +14,7 @@ Type the below to initate the local environment
 
     $ rails s
 
-In a local browser, type localhost/3000 into the url to view the application.
+In a local browser, type localhost/3000/home into the url to view the application.
 
 ## Usage
 
