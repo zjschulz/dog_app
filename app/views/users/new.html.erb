@@ -2,12 +2,12 @@
 
 <p><%= render partial: '/errors', locals: { record: @user } %></p
 
-<%= form_for @user, url: signup_path do |t| %>
+<div><%= form_for @user, url: signup_path do |t| %>
     <%= t.label :username %>
-    <div><%= t.text_field :username %></div>
+    <%= t.text_field :username %>
     <%= t.label :password %>
-    <div><%= t.password_field :password %></div>
+    <%= t.password_field :password %>
     <%= t.label :confirm_password %>
-    <div><%= t.password_field :password_confirmation %></div>
+    <%= t.password_field :password_confirmation %>
     <%= t.submit %>
-<% end %> 
+<% end %></div>
