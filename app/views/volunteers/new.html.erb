@@ -3,7 +3,8 @@
 <p><%= render partial: '/errors', locals: { record: @volunteer } %></p>
 
 <%= form_for @volunteer do |t| %>
+    <div style="border: 10px inset grey; width: 20rem; margin: 10px; padding: 2px; background-color: white">
     <%= t.label :name %>
     <div><%= t.text_field :name %></div>
-    <%= t.submit "Create Volunteer" %>
+    <%= t.submit "Create Volunteer" %></div>
 <% end %>

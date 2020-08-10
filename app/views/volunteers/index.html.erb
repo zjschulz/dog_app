@@ -3,6 +3,7 @@
 <%= link_to "Create New Volunteer", new_volunteer_path %>
 
 <% @volunteers.each do |volunteer| %>
+    <div style="border: 10px inset grey; width: 10rem; margin: 10px; background-color: white">
     <h3><%= link_to volunteer.name, volunteer_walks_path(volunteer) %></h3>
-    <p><%= time_conversion(volunteer.time_method)%></p>
+    <p><%= time_conversion(volunteer.time_method)%></p></div>
 <% end %>

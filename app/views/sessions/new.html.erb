@@ -2,11 +2,12 @@
 
 <p><i><%= @error %></i></p>
 
+<div style="border: 10px inset grey; width: 40rem; margin: 10px; padding: 5px; background-color: white">
 <%= form_tag %>
 <%= label_tag :username %>
 <%= text_field_tag :username %>
 <%= label_tag :password %>
 <%= password_field_tag :password %>
-<%= submit_tag "Log In" %>
+<%= submit_tag "Log In" %></div>
 
 <%= link_to "Log in Via Github", '/auth/github' %>

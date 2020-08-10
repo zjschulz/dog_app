@@ -3,6 +3,7 @@
 <p><%= render partial: '/errors', locals: { record: @walk } %></p>
 
 <%= form_for @walk do |t| %>
+    <div style="border: 10px inset grey; width: 20rem; margin: 10px; padding: 2px; background-color: white">
     <%= t.label :dog %>
     <div><%= t.collection_select :dog_id, Dog.all, :id, :name, prompt: true %></div>
     <%= t.label :Duration %> (in minutes)
@@ -10,5 +11,5 @@
     <%= t.label :Date %>
     <div><%= t.date_field :date %></div>
     <%= t.hidden_field :volunteer_id, value: @volunteer.id %>
-    <%= t.submit "Create Walk" %>
+    <%= t.submit "Create Walk" %></div>
 <% end %>

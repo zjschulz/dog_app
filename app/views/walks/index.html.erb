@@ -3,7 +3,8 @@
 <%= link_to "Add New Walk", new_volunteer_walk_path(@volunteer) %>
 
 <% @volunteer.walks.each do |walk| %>
+    <div style="border: 10px inset grey; width: 10rem; margin: 10px; background-color: white">
     <h3><%= walk.dog.name %></h3>
     <p><%= walk.duration %> minutes</p>
-    <p><%= walk.date %></p>
+    <p><%= walk.date %></p></div>
 <% end %> 

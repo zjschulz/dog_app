@@ -6,8 +6,10 @@
 <%= link_to "Female", dogs_female_path %>
 
 <% @dogs.each do |dog| %>
+<div style="border: 10px inset grey; width: 20rem; margin: 10px; padding: 2px; background-color: white">
 <p><h3><u><%= dog.name %></u></h3></p>
 <p><b>Breed/Gender: </b><%= dog.breed %>, <%= dog.gender %></p>
 <p><b>Age: </b><%= dog.age %> years</p>
 <p><b>Time In SPCA: </b><%= dog.time_in %> months</p>
+</div>
 <% end %>
