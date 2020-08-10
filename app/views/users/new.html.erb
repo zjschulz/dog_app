@@ -3,12 +3,12 @@
 <p><%= render partial: '/errors', locals: { record: @user } %></p
 
 <div><%= form_for @user, url: signup_path do |t| %>
-    <div style="border: 10px inset grey; width: 20rem; margin: 10px; padding: 2px; background-color: white">
-    <p style="text-align:center"><%= t.label :username %>
-    <%= t.text_field :username %></p>
-    <p style="text-align:center"><%= t.label :password %>
-    <%= t.password_field :password %></p>
-    <p style="text-align:center"><%= t.label :confirm_password %>
-    <%= t.password_field :password_confirmation %></p>
+    <div style="border: 10px inset grey; width: 60rem; margin: 10px; padding: 2px; background-color: white">
+    <%= t.label :username %>
+    <%= t.text_field :username %>
+    <%= t.label :password %>
+    <%= t.password_field :password %>
+    <%= t.label :confirm_password %>
+    <%= t.password_field :password_confirmation %>
     <%= t.submit %></div>
 <% end %></div>
