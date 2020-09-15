@@ -1,7 +1,7 @@
 <h2>Dogs</h2>
 
 <%= link_to "All Dogs", dogs_path %>
-<%= link_to "Order by Time In SPCA", dogs_longestinspca_path %>
+<%= link_to "Order by Time In ASPCA", dogs_longestinaspca_path %>
 <%= link_to "Rottweilers", dogs_rottweiler_path %>
 <%= link_to "Female", dogs_female_path %>
 
@@ -10,6 +10,6 @@
 <p><h3><u><%= dog.name %></u></h3></p>
 <p><b>Breed/Gender: </b><%= dog.breed %>, <%= dog.gender %></p>
 <p><b>Age: </b><%= dog.age %> years</p>
-<p><b>Time In SPCA: </b><%= dog.time_in %> months</p>
+<p><b>Time In ASPCA: </b><%= dog.time_in %> months</p>
 </div>
 <% end %>

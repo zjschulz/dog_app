@@ -1,6 +1,6 @@
 # Dog_App
 
-This application was designed with dog shelters, SPCA centers, and other various locations where volunteers are needed to walk dogs. This lets a user log in, create volunteers, and add walks with dogs for each volunteer. The duration of each walk is monitored and each volunteer has their total duration of walks present on the volunteer page.
+This application was designed with dog shelters, ASPCA centers, and other various locations where volunteers are needed to walk dogs. This lets a user log in, create volunteers, and add walks with dogs for each volunteer. The duration of each walk is monitored and each volunteer has their total duration of walks present on the volunteer page.
 
 ## Installation
 
